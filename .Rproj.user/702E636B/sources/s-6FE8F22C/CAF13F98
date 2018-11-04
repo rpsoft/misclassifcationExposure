@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1541086090196.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "CAF13F98",
+    "lastKnownWriteTime" : 1541335080,
+    "last_content_update" : 1541335080461,
+    "path" : "~/ihw/advEpi/misclassification_bias_2019.R",
+    "project_path" : "misclassification_bias_2019.R",
+    "properties" : {
+        "cursorPosition" : "89,20",
+        "scrollLine" : "77"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
