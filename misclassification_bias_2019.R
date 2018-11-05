@@ -47,10 +47,14 @@ miscl.exposure <- function(true.data, exp.perc, unexp.perc) {
   new.table2 <- cbind(new.table2, c(new.cont.exp, new.cont.unexp)) ## column 2 controls
   
   colnames(new.table2) <- c("MI Case", "Control")
-  rownames(new.table2) <- c("Exposed", "Unexposed")
+  rownames(new.table2) <- c("Exposed (High fat diet)", "Unexposed")
+  new.table3 <- cbind(new.table2, rowSums(new.table2))
+  new.table3 <- rbind(new.table3, colSums(new.table3))
+  colnames(new.table3)[3] <- "Total"
+  rownames(new.table3)[3] <- "Total"
   ## Results
 
-  a = new.table2
+  a = new.table3
   b = round(fisher.test(new.table2)$estimate,1)
   c = c(round(fisher.test(new.table2, conf.int = TRUE)$conf.int[1],1), round(fisher.test(new.table2, conf.int = TRUE)$conf.int[2],1))
   
@@ -67,7 +71,7 @@ D[[1]] %>% typeof()
 
 
 # Now we consider the case where 20% of the 'unexposed' to having a high fat diet:
-miscl.exposure(true.dist, exp.perc = 0, unexp.perc = 0.2)
+miscl.exposure(true.dist, exp.perc = 0, unexp.perc = 0.2)[[1]]
 # Finally, where 20% of each exposure category are misclassified:
 miscl.exposure(true.dist, exp.perc = 0.2, unexp.perc = 0.2)
 miscl.exposure(true.dist, exp.perc = 0.5, unexp.perc = 0.7)
